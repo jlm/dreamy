@@ -1,13 +1,13 @@
 PATH
   remote: .
   specs:
-    dreamy (0.5.7)
+    dreamy (0.5.8)
       nokogiri
       terminal-table (>= 1.0.5)
       uuid (>= 2.0.1)
 
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     macaddr (1.7.2)
       systemu (~> 2.6.5)
