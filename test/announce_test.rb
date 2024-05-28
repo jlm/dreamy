@@ -18,7 +18,7 @@ EOF
     end
 
     should "create a new list of announce lists from xml" do
-      l = Dreamy::AnnounceList.new_from_xml(Hpricot.XML(@xml))
+      l = Dreamy::AnnounceList.new_from_xml(Nokogiri::XML(@xml))
       assert_equal "Super Announce", l.name
       assert_equal 8675309, l.account_id
       assert_equal "anessalee.net", l.domain

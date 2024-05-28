@@ -14,7 +14,7 @@ EOF
     end
 
     should "create a new user from xml" do
-      host = Dreamy::MysqlHost.new_from_xml(Hpricot.XML(@xml))
+      host = Dreamy::MysqlHost.new_from_xml(Nokogiri::XML(@xml))
       assert_equal 8675309, host.account_id
       assert_equal "mysql.site.dreamhosters.com", host.domain
       assert_equal "haass.tuna.dreamhost.com", host.home

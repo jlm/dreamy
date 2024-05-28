@@ -19,7 +19,7 @@ EOF
     end
 
     should "create a new user from xml" do
-      u = Dreamy::User.new_from_xml(Hpricot.XML(@xml))
+      u = Dreamy::User.new_from_xml(Nokogiri::XML(@xml))
       assert_equal 8675309, u.account_id
       assert_equal 123.04, u.disk_used_mb
       assert_equal "Joe Schmoe", u.gecos

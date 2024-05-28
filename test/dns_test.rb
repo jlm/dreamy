@@ -18,7 +18,7 @@ EOF
     end
 
     should "create a new DNS entry from xml" do
-      d = Dreamy::Dns.new_from_xml(Hpricot.XML(@xml))
+      d = Dreamy::Dns.new_from_xml(Nokogiri::XML(@xml))
       assert_equal 8675309, d.account_id
       assert_equal "", d.comment
       assert_equal 0, d.editable

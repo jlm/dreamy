@@ -234,7 +234,7 @@ module Dreamy
     private
     
     def api_error?(doc)
-      raise ApiError, (doc/:data).innerHTML if (doc/:result).innerHTML == "error"
+      raise ApiError, (doc/:data).inner_html if (doc/:result).inner_html == "error"
     end
 
     def request(cmd,values={},use_post=false)
@@ -281,9 +281,9 @@ module Dreamy
       end
     end
 
-    # Converts a string response into an Hpricot xml element.
+    # Converts a string response into an Nokogiri xml element.
     def parse(response)
-      Hpricot.XML(response || '')
+      Nokogiri::XML(response || '')
     end
 
   end

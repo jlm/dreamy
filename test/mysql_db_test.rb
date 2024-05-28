@@ -16,7 +16,7 @@ EOF
     end
 
     should "create a new user from xml" do
-      db = Dreamy::MysqlDb.new_from_xml(Hpricot.XML(@xml))
+      db = Dreamy::MysqlDb.new_from_xml(Nokogiri::XML(@xml))
       assert_equal 8675309, db.account_id
       assert_equal "betterdb2435", db.name
       assert_equal "This one's better", db.description

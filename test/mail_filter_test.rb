@@ -20,7 +20,7 @@ EOF
     end
 
     should "create a new user from xml" do
-      s = Dreamy::MailFilter.new_from_xml(Hpricot.XML(@xml))
+      s = Dreamy::MailFilter.new_from_xml(Nokogiri::XML(@xml))
       assert_equal 8675309, s.account_id
       assert_equal "test@anessalee.net", s.address
       assert_equal "from", s.filter_on

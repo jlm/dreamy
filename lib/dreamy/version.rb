@@ -1,3 +1,3 @@
 module Dreamy
-  VERSION = "0.5.6"
+  VERSION = "0.5.8"
 end

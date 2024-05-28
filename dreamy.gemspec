@@ -17,7 +17,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_dependency("hpricot", ">= 0.7")
+  gem.add_dependency("nokogiri")
   gem.add_dependency("terminal-table", [">= 1.0.5"])
   gem.add_dependency("uuid", [">= 2.0.1"])
 

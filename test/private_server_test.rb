@@ -16,7 +16,7 @@ EOF
     end
 
     should "create a new PS from xml" do
-      ps = Dreamy::PrivateServer.new_from_xml(Hpricot.XML(@xml))
+      ps = Dreamy::PrivateServer.new_from_xml(Nokogiri::XML(@xml))
       assert_equal 8675309, ps.account_id
       assert_equal "ps10034", ps.name
       assert_equal "web", ps.type
@@ -69,7 +69,7 @@ EOF
     end
     
     should "create settings hash from xml" do
-      settings = Dreamy::PrivateServer.settings_from_xml(Hpricot.XML(@xml))
+      settings = Dreamy::PrivateServer.settings_from_xml(Nokogiri::XML(@xml))
       assert_equal "1", settings["apache2_enabled"]
       assert_equal "", settings["comment"]
       assert_equal "0", settings["courier_enabled"]
@@ -96,7 +96,7 @@ EOF
     end
     
     should "create size hash from xml" do
-      size = Dreamy::PrivateServer.size_from_xml(Hpricot.XML(@xml))
+      size = Dreamy::PrivateServer.size_from_xml(Nokogiri::XML(@xml))
       assert_equal 2300, size["memory_mb"]
       assert_equal 0.00, size["monthly_cost"]
       assert_equal 0.0000, size["period_cost"]
@@ -117,7 +117,7 @@ EOF
     end
     
     should "create usage hash from xml" do
-      usage = Dreamy::PrivateServer.usage_from_xml(Hpricot.XML(@xml))
+      usage = Dreamy::PrivateServer.usage_from_xml(Nokogiri::XML(@xml))
       assert_equal 0.02, usage["load"]
       assert_equal 146, usage["memory_mb"]
       assert_equal "2009-05-02 17:26:44", usage["stamp"]
@@ -137,7 +137,7 @@ EOF
     end
     
     should "create pending server hash from xml" do
-      pending = Dreamy::PrivateServer.pending_from_xml(Hpricot.XML(@xml))
+      pending = Dreamy::PrivateServer.pending_from_xml(Nokogiri::XML(@xml))
       assert_equal "8675309", pending["account_id"]
       assert_equal "10.5.3.2", pending["ip"]
       assert_equal "2009-03-12 06:43:48", pending["stamp"]

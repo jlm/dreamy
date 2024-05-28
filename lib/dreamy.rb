@@ -2,7 +2,7 @@ require 'uri'
 require 'net/https'
 require 'yaml'
 require 'rubygems'
-require 'hpricot'
+require 'nokogiri'
 require 'uuid'
 
 

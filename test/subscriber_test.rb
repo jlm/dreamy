@@ -16,7 +16,7 @@ EOF
     end
 
     should "create a new user from xml" do
-      s = Dreamy::Subscriber.new_from_xml(Hpricot.XML(@xml))
+      s = Dreamy::Subscriber.new_from_xml(Nokogiri::XML(@xml))
       assert_equal "joe@schmoe.com", s.email
       assert_equal 1, s.confirmed
       assert_equal "2007-12-13 16:55:15", s.subscribe_date

@@ -35,8 +35,8 @@ EOF
 </data>
 EOF
 
-    @d = Dreamy::Domain.new_from_xml(Hpricot.XML(@domain_xml))
-    @m = Dreamy::Domain.new_from_xml(Hpricot.XML(@mysql_xml))
+    @d = Dreamy::Domain.new_from_xml(Nokogiri::XML(@domain_xml))
+    @m = Dreamy::Domain.new_from_xml(Nokogiri::XML(@mysql_xml))
     end
 
     should "assign valid http domain from xml" do
